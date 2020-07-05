@@ -1,0 +1,35 @@
+%YAML:1.0
+---
+
+color_type:   0
+
+length_min: 200
+length_max: 4
+
+length_div_width_max: 15
+length_div_width_min: 1
+
+blob_rotate_angle_limit: 25
+pixel_percent_limit:    0.08
+
+match_pair_blob_length_ratio: 0.65
+match_pair_blob_distance_L:   12
+match_pair_blob_distance_H_k: 7
+match_pair_blob_horizontal_angle_diff_limit: 30
+match_pair_blob_rotate_angle_diff_limit:     15
+
+level_2_trajectory_compensate_bar_length: 15
+level_3_trajectory_compensate_bar_length: 10.5
+
+level_1_trajectory_compensate_x:  -18
+level_1_trajectory_compensate_y:  -85
+level_2_trajectory_compensate_x:  -18
+level_2_trajectory_compensate_y:  -98
+level_3_trajectory_compensate_x:  -18
+level_3_trajectory_compensate_y:  -105
+
+predict_dx: 80
+predict_dy: 60
+
+svm_model_hog_path: ../cfg/SVM_HOG.xml
+

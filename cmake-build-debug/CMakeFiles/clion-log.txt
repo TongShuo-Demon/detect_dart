@@ -1,0 +1,11 @@
+/home/demon/RobMaster/clion-2019.1.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/demon/CLionProjects/two_camera
+-- Boost version: 1.58.0
+-- Found the following Boost libraries:
+--   system
+--   atomic
+-- Configuring done
+WARNING: Target "Radar" requests linking to directory "/opt/DahuaTech/MVViewer/lib/GenICam/bin/Linux64_x64".  Targets may link only to libraries.  CMake is dropping the item.
+WARNING: Target "Radar" requests linking to directory "/opt/DahuaTech/MVViewer/lib".  Targets may link only to libraries.  CMake is dropping the item.
+WARNING: Target "Radar" requests linking to directory "/home/demon/CLionProjects/two_camera/lib/cubot".  Targets may link only to libraries.  CMake is dropping the item.
+-- Generating done
+-- Build files have been written to: /home/demon/CLionProjects/two_camera/cmake-build-debug

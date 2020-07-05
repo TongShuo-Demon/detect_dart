@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Radar" targetName="cam_node" />
+      <config projectName="Radar" targetName="Radar" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="97f20da6-b71a-44e7-9836-872113e16ad2" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="177" selection-start-line="177" selection-end-line="203" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#317#378#0" expanded="true" />
+                <element signature="e#406#583#0" expanded="true" />
+                <marker date="1593929046081" expanded="true" signature="0:9632" ph="..." />
+                <marker date="1593929046081" expanded="true" signature="5896:6238" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_radar/src/find_darts.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="506" column="105" selection-start-line="506" selection-start-column="105" selection-end-line="506" selection-end-column="105" />
+              <folding>
+                <marker date="1593929046037" expanded="true" signature="4930:5008" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_radar/inc/find_darts.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <element signature="e#94#126#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>left_intrinsic</find>
+      <find>imgCB</find>
+      <find>imgCallback</find>
+      <find>cameraSptr</find>
+      <find>_cameraSptr</find>
+      <find>m_streamSptr</find>
+      <find>pixeLeft</find>
+      <find>右图未检测到</find>
+      <find>delete</find>
+      <find>get image.</find>
+      <find>filename</find>
+      <find>setExposureTime</find>
+      <find>world：</find>
+      <find>fps</find>
+      <find>free</find>
+      <find>contours</find>
+      <find>FPS</find>
+      <find>左相机系坐标为</find>
+      <find>world</find>
+      <find>measurement</find>
+      <find>左相机系坐标为:</find>
+      <find>usingHSV</find>
+      <find>temp_contours</find>
+      <find>meters</find>
+      <find>速度</find>
+      <find>KF.statePost</find>
+      <find>速度：</find>
+      <find>速度：2</find>
+      <find>run_time</find>
+      <find>predict_pt</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/include_camera/camera/startFetch.hpp" />
+        <option value="$PROJECT_DIR$/include_camera/camera/camParaConfig.h" />
+        <option value="$PROJECT_DIR$/camera/streamRetrieve.cpp" />
+        <option value="$PROJECT_DIR$/camera/startFetch.cpp" />
+        <option value="$PROJECT_DIR$/my_radar/inc/others.h" />
+        <option value="$PROJECT_DIR$/cfg/armor_detect_cfg.yml" />
+        <option value="$PROJECT_DIR$/libapriltag.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/camera/src/cam_mode.cpp" />
+        <option value="$PROJECT_DIR$/camera/src/streamRetrieve.cpp" />
+        <option value="$PROJECT_DIR$/my_radar/inc/apriltag_pose.h" />
+        <option value="$PROJECT_DIR$/camera/src/startFetch.cpp" />
+        <option value="$PROJECT_DIR$/camera/src/camParaConfig.cpp" />
+        <option value="$PROJECT_DIR$/cfg/daHuaCamConfig.yml" />
+        <option value="$PROJECT_DIR$/my_radar/inc/double_measurement.h" />
+        <option value="$PROJECT_DIR$/my_radar/inc/switch_function.h" />
+        <option value="$PROJECT_DIR$/my_radar/src/double_measurement.cpp" />
+        <option value="$PROJECT_DIR$/my_radar/src/others.cpp" />
+        <option value="$PROJECT_DIR$/cfg/radar.yml" />
+        <option value="$PROJECT_DIR$/my_radar/src/apriltag_pose.cpp" />
+        <option value="$PROJECT_DIR$/my_radar/inc/radar_main.hpp" />
+        <option value="$PROJECT_DIR$/my_radar/src/radar_main.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/my_radar/src/find_darts.cpp" />
+        <option value="$PROJECT_DIR$/my_radar/inc/find_darts.h" />
+      </list>
+    </option>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2029" />
+    <option name="y" value="-6" />
+    <option name="width" value="1918" />
+    <option name="height" value="1086" />
+  </component>
+  <component name="ProjectId" id="1TvOaqo78ZU660qVFhjaPTZZnpK" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Radar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="two_camera" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.C/C++" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.Radar">
+    <configuration name="Radar" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Radar" TARGET_NAME="Radar" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Radar" RUN_TARGET_NAME="Radar">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cam_node" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Radar" TARGET_NAME="cam_node" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Radar" RUN_TARGET_NAME="cam_node">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.Radar" />
+      <item itemvalue="CMake Application.cam_node" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="97f20da6-b71a-44e7-9836-872113e16ad2" name="Default Changelist" comment="" />
+      <created>1574337168853</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574337168853</updated>
+      <workItem from="1574337170341" duration="12916000" />
+      <workItem from="1574386251113" duration="14909000" />
+      <workItem from="1574424553167" duration="1777000" />
+      <workItem from="1574476687370" duration="17866000" />
+      <workItem from="1574495761135" duration="6652000" />
+      <workItem from="1574582037290" duration="16852000" />
+      <workItem from="1574655849635" duration="2881000" />
+      <workItem from="1575097042000" duration="643000" />
+      <workItem from="1576386440591" duration="38000" />
+      <workItem from="1576407402280" duration="38000" />
+      <workItem from="1589456433951" duration="1624000" />
+      <workItem from="1589458860294" duration="1462000" />
+      <workItem from="1589512343092" duration="707000" />
+      <workItem from="1589526915549" duration="3390000" />
+      <workItem from="1589530393701" duration="2648000" />
+      <workItem from="1589534186147" duration="1380000" />
+      <workItem from="1589540114988" duration="547000" />
+      <workItem from="1589592172176" duration="6563000" />
+      <workItem from="1589612819546" duration="312000" />
+      <workItem from="1589613155157" duration="17184000" />
+      <workItem from="1589765925250" duration="2670000" />
+      <workItem from="1589779142248" duration="363000" />
+      <workItem from="1589782919111" duration="5711000" />
+      <workItem from="1589791495013" duration="5243000" />
+      <workItem from="1589865043048" duration="4131000" />
+      <workItem from="1589878934309" duration="9896000" />
+      <workItem from="1589933754125" duration="71000" />
+      <workItem from="1590058248877" duration="5620000" />
+      <workItem from="1590064024721" duration="3183000" />
+      <workItem from="1590105065257" duration="25901000" />
+      <workItem from="1590200733936" duration="39482000" />
+      <workItem from="1590405870283" duration="2035000" />
+      <workItem from="1590408561818" duration="5166000" />
+      <workItem from="1590450499356" duration="14025000" />
+      <workItem from="1590473069139" duration="2174000" />
+      <workItem from="1590646871330" duration="604000" />
+      <workItem from="1591185476981" duration="7568000" />
+      <workItem from="1591361577981" duration="5091000" />
+      <workItem from="1591402098609" duration="1164000" />
+      <workItem from="1591404698887" duration="3384000" />
+      <workItem from="1591413494707" duration="12799000" />
+      <workItem from="1591489467123" duration="2919000" />
+      <workItem from="1591500577001" duration="17747000" />
+      <workItem from="1591577842889" duration="20503000" />
+      <workItem from="1591660802387" duration="16831000" />
+      <workItem from="1591698980693" duration="4569000" />
+      <workItem from="1591705175921" duration="6237000" />
+      <workItem from="1591752095735" duration="8533000" />
+      <workItem from="1591783772648" duration="8954000" />
+      <workItem from="1591944529305" duration="1586000" />
+      <workItem from="1592033975854" duration="2086000" />
+      <workItem from="1592093140676" duration="10960000" />
+      <workItem from="1592207187099" duration="13066000" />
+      <workItem from="1592305220765" duration="2371000" />
+      <workItem from="1592311296961" duration="1533000" />
+      <workItem from="1592315536312" duration="18784000" />
+      <workItem from="1592448477447" duration="11426000" />
+      <workItem from="1592466483749" duration="13818000" />
+      <workItem from="1592563387043" duration="13932000" />
+      <workItem from="1592705473355" duration="57702000" />
+      <workItem from="1592882323721" duration="16292000" />
+      <workItem from="1592912111399" duration="3096000" />
+      <workItem from="1592967711252" duration="12993000" />
+      <workItem from="1593003261936" duration="3429000" />
+      <workItem from="1593163927327" duration="27560000" />
+      <workItem from="1593346748386" duration="6425000" />
+      <workItem from="1593391354878" duration="12561000" />
+      <workItem from="1593497956898" duration="19697000" />
+      <workItem from="1593570866014" duration="33248000" />
+      <workItem from="1593775215751" duration="5890000" />
+      <workItem from="1593869246858" duration="694000" />
+      <workItem from="1593925703837" duration="3666000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="571206000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1920" y="-6" width="1920" height="1086" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19725738" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.88765824" visible="true" weight="0.18228106" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.398167" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.4899789" weight="0.3329939" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3299389" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.4378819" />
+      <window_info anchor="bottom" id="Database" order="13" sideWeight="0.5100211" side_tool="true" weight="0.32077393" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19725738" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.88765824" visible="true" weight="0.30142567" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.398167" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.4899789" weight="0.3329939" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3299389" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.4378819" />
+      <window_info anchor="bottom" id="Database" order="13" sideWeight="0.5100211" side_tool="true" weight="0.32077393" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/my_radar/src/pretreatment.cpp" />
+    <entry file="file://$PROJECT_DIR$/my_radar/inc/pretreatment.hpp" />
+    <entry file="file://$PROJECT_DIR$/my_radar/inc/others.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libapriltag.h" />
+    <entry file="file://$PROJECT_DIR$/camera/cmake-build-debug/Makefile" />
+    <entry file="file:///usr/local/include/opencv4/opencv2/opencv.hpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///usr/local/include/apriltag/apriltag.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="194" column="34" selection-start-line="194" selection-start-column="34" selection-end-line="194" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/apriltag/common/getopt.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/apriltag/apriltag_pose.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/apriltag/common/matd.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/LU/InverseImpl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="332" selection-start-line="332" selection-end-line="332" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/Core">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="296" selection-start-line="296" selection-end-line="296" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/src/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/inc/camParaConfig.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/opencv4/opencv2/videoio.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18502">
+          <caret line="841" column="19" selection-start-line="841" selection-start-column="19" selection-end-line="841" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/RobMaster/opencv420/modules/imgcodecs/src/loadsave.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="660" selection-start-line="660" selection-end-line="660" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/boost/function/function_fwd.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding>
+            <element signature="e#1091#1111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/inc/daHuaCam.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="987" column="15" selection-start-line="987" selection-start-column="15" selection-end-line="987" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Core/Matrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="450" column="54" selection-start-line="450" selection-start-column="54" selection-end-line="450" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Geometry/Transform.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="937" column="36" selection-start-line="937" selection-start-column="36" selection-end-line="937" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="744" selection-start-line="744" selection-end-line="744" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/inc/apriltag_pose.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+          <folding>
+            <element signature="e#99#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/DahuaTech/MVViewer/include/Memory/SharedPtr.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="140" column="31" selection-start-line="140" selection-start-column="31" selection-end-line="140" selection-end-column="31" />
+          <folding>
+            <element signature="e#2473#2482#0" expanded="true" />
+            <element signature="e#3026#3035#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/src/startFetch.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/inc/StreamRetrieve.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/src/camParaConfig.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="66" column="35" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/src/streamRetrieve.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/src/cam_mode.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfg/armor_cam_para_cfg.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfg/my_11_1_autohit.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1650" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/opencv4/opencv2/video/background_segm.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="309" column="4" selection-start-line="309" selection-start-column="4" selection-end-line="309" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/inc/double_measurement.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="45" column="48" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="48" />
+          <folding>
+            <element signature="e#110#142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfg/armor_detect_cfg.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-149">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/inc/switch_function.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/src/double_measurement.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2156">
+          <caret line="98" column="35" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
+          <folding>
+            <element signature="e#92#1116#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/src/kalman_forecast.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/inc/kalman_forecast.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/src/others.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/opencv4/opencv2/core/hal/interface.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfg/daHuaCamConfig.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/opencv4/opencv2/video/tracking.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="390" column="23" selection-start-line="390" selection-start-column="23" selection-end-line="390" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/opencv4/opencv2/imgproc.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="1559" column="63" selection-start-line="1559" selection-start-column="51" selection-end-line="1559" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/opencv4/opencv2/core/base.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="269" column="20" selection-start-line="269" selection-start-column="4" selection-end-line="269" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/inc/radar_main.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/src/radar_main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfg/radar.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/src/apriltag_pose.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="201" column="2" selection-start-line="201" selection-start-column="2" selection-end-line="201" selection-end-column="2" />
+          <folding>
+            <element signature="e#69#2345#0" />
+            <element signature="e#2348#3161#0" />
+            <marker date="1593604821239" expanded="true" signature="6332:6458" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/src/find_darts.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="506" column="105" selection-start-line="506" selection-start-column="105" selection-end-line="506" selection-end-column="105" />
+          <folding>
+            <marker date="1593929046037" expanded="true" signature="4930:5008" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_radar/inc/find_darts.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#94#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="177" selection-start-line="177" selection-end-line="203" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#317#378#0" expanded="true" />
+            <element signature="e#406#583#0" expanded="true" />
+            <marker date="1593929046081" expanded="true" signature="0:9632" ph="..." />
+            <marker date="1593929046081" expanded="true" signature="5896:6238" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
