@@ -24,6 +24,6 @@
 //灯条检测
 //#define show_blob
 
-#define apriltag_show
+//#define apriltag_show
 
 #endif //RADAR_SWITCH_FUNCTION_H

@@ -9,6 +9,8 @@
 #include "opencv2/opencv.hpp"
 #include <eigen3/Eigen/Core>
 #include <eigen3/Eigen/Geometry>
+#include "radar_main.hpp"
+#include "switch_function.h"
 
 extern "C" {
 #include "apriltag/apriltag.h"
@@ -39,7 +41,7 @@ class UsingApriltag{
 
 public:
 
-    UsingApriltag();   //初始化apriltag各种参数
+    UsingApriltag(std::string family, double left_fx,double left_fy,double left_cx,double left_cy);   //初始化apriltag各种参数
 
 
     void positionEstimation(cv::Mat image, Eigen::Matrix3f &rvec,Eigen::Vector3f  &tvec);

@@ -1,0 +1,72 @@
+%YAML:1.0
+---
+#左相机内参
+leftCameraMatrix: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: f
+  data: [1738.9,0,592,
+         0,1738.4,504.5,
+         0, 0, 1 ]
+
+leftDistCoeffs: !!opencv-matrix
+  rows: 5
+  cols: 1
+  dt: f
+  data: [-0.1539, 0.2329, 0, 0, 0]
+#右相机内参
+rightCameraMatrix: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: f
+  data: [1716.3,0,708.6,
+         0,1711.9,463.7,
+         0, 0, 1 ]
+
+rightDistCoeffs: !!opencv-matrix
+  rows: 5
+  cols: 1
+  dt: f
+  data: [-0.16, 0.1698,  0, 0, 0]
+
+#双目相机标定的结果是以左相机为世界坐标系
+left_rotation: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: f
+  data: [1,0,0,
+         0,1,0,
+         0, 0, 1 ]
+
+left_translation: !!opencv-matrix
+  rows: 3
+  cols: 1
+  dt: f
+  data: [0,0,0 ]
+
+
+right_rotation: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: f
+  data: [0.9935,-0.0179,-0.1123,
+         0.0094,0.9971,-0.0756,
+         0.1133,0.0741,0.9908 ]
+
+right_translation: !!opencv-matrix
+  rows: 3
+  cols: 1
+  dt: f
+  data: [-758.7666,-13.4515,-59.1288 ]
+
+transition_matrix: !!opencv-matrix
+  rows: 6
+  cols: 6
+  dt: f
+  data: [1,0,0,1,0,0,
+         0,1,0,0,5,0,
+         0,0,1,0,0,5,
+         0,0,0,1,0,0,
+         0,0,0,0,1,0,
+         0,0,0,0,0,1]
+

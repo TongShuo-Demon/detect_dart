@@ -6,15 +6,15 @@
 #include "apriltag_pose.h"
 
 
- UsingApriltag :: UsingApriltag()
+ UsingApriltag :: UsingApriltag(std::string family,double left_fx,double left_fy,double left_cx,double left_cy)
 {
-
+    const char *c_family = family.c_str();  //c_str()返回const char *类型
     getopt = getopt_create();
 
     getopt_add_bool(getopt, 'h', "help", 0, "Show this help");
     getopt_add_bool(getopt, 'd', "debug", 0, "Enable debugging output (slow)");
     getopt_add_bool(getopt, 'q', "quiet", 0, "Reduce output");
-    getopt_add_string(getopt, 'f', "family", "tag36h11", "Tag family to use");
+    getopt_add_string(getopt, 'f', "family", c_family, "Tag family to use");
     getopt_add_int(getopt, 't', "threads", "1", "Use this many CPU threads");
     getopt_add_double(getopt, 'x', "decimate", "2.0", "Decimate input image by this factor");
     getopt_add_double(getopt, 'b', "blur", "0.0", "Apply low-pass blur to input");
@@ -54,7 +54,7 @@
 
 /***********输入标定的相机参数*************/
 
-    info.tagsize =0.365; //标识的实际尺寸 0.133
+    info.tagsize = radar::tag_size; //标识的实际尺寸
     info.fx = 1738.9;
     info.fy = 1738.4;
     info.cx = 592;
@@ -148,11 +148,11 @@ void UsingApriltag :: positionEstimation(cv::Mat frame, Eigen::Matrix3f &rvec, E
                 pose.R->data[3],pose.R->data[4],pose.R->data[5],
                 pose.R->data[6],pose.R->data[7],pose.R->data[8];
 
+
+
 #ifdef apriltag_show
         std::cout <<"tvec:"<< std::endl<< tvec << std::endl<<std::endl;
         std::cout <<"rvec:"<< std::endl<< rvec << std::endl<<std::endl;
-
-
         stringstream ss;      //转成流
         ss << det->id;
         String text = ss.str();
@@ -195,11 +195,16 @@ void UsingApriltag :: camera2world(Eigen::Vector3f P_cam,Eigen::Matrix3f R_cam_t
     T_world_tag << 2.0648,8,0.7;
 
     P_world = R_world_tag*P_tag+T_world_tag;
-//    P_world = P_tag;
+
 
 //#ifdef apriltag_show
-    std::cout << "uwb_world："<<std::endl << P_world << std::endl;
+    std::cout << "uwb_world：" << P_world << std::endl;
 //#endif
+
+//    std::cout << "R：" << R_world_tag* R_tag_cam<< std::endl;
+//    std::cout << "T：" << R_world_tag* T_tag_cam+T_world_tag<< std::endl;
+
+
 
 }
 

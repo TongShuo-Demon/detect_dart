@@ -10,7 +10,7 @@ cv::Mat DartsDetect::imagePreProcess(cv::Mat &src,uint8_t enemy_color) {
     cv::Mat color_channel;
     cv::split(src, channels);               //************************
     equalizeHist(channels[0],channels[0]);
-    equalizeHist(channels[2],channels[2]);  //直方图均衡化
+    equalizeHist(channels[2],channels[2]);  //直方图均衡化,增加对比度
 
     if (enemy_color == 0) {
         color_channel = channels[0];        // 根据目标颜色进行通道提取
@@ -224,8 +224,8 @@ bool DartsDetect::extractionDart(const cv::Mat src, RectDarts &move_darts){
             min_ellipse = fitEllipse(contours[i]);                  //椭圆拟合
 
             //!面积筛选
-            if (radar::vehicle_min_area > contourArea(contours[i]) ||
-                contourArea(contours[i]) > radar::vehicle_max_area ){
+            if (radar::dart_min_area > contourArea(contours[i]) ||
+                contourArea(contours[i]) > radar::dart_max_area ){
 #ifdef show_move
                 std::cout << "运动筛选：面积筛选未通过:"<< contourArea(contours[i]) << std::endl;
 #endif
@@ -234,7 +234,7 @@ bool DartsDetect::extractionDart(const cv::Mat src, RectDarts &move_darts){
 
             //!轮廓面积和外接矩形面积筛选
             float areaRatio = contourArea(contours[i])/min_ellipse.size.area();
-            if (areaRatio < 0.1 ){
+            if (areaRatio < radar::dart_area_ratio){
 #ifdef show_move
                 std::cout << "运动筛选：面积比值筛选未通过:" << areaRatio<< std::endl;
 #endif
@@ -242,16 +242,16 @@ bool DartsDetect::extractionDart(const cv::Mat src, RectDarts &move_darts){
             }
 
             //!长宽比值筛选
-            float vehicle_heigth_div_width = (float)min_ellipse.size.height / min_ellipse.size.width;
-            if (radar::vehicle_heigth_div_width_min >  vehicle_heigth_div_width ||
-                vehicle_heigth_div_width > radar::vehicle_heigth_div_width_max ){
+            float dart_heigth_div_width = (float)min_ellipse.size.height / min_ellipse.size.width;
+            if (radar::dart_heigth_div_width_min >  dart_heigth_div_width ||
+                dart_heigth_div_width > radar::dart_heigth_div_width_max ){
 #ifdef show_move
                 std::cout << "运动筛选：长宽比值筛选未通过:"<< vehicle_heigth_div_width << std::endl;
 #endif
                 continue;
             }
             //!长和宽长度
-            if ( min_ellipse.size.height < 8 || min_ellipse.size.height > 200){
+            if ( min_ellipse.size.height < radar::dart_heigth_min || min_ellipse.size.height > radar::dart_heigth_max){
 #ifdef show_move
                 std::cout << "运动筛选：长宽的长度未通过:"<< vehicle_heigth_div_width << std::endl;
 #endif
@@ -279,9 +279,9 @@ bool DartsDetect::extractionDart(const cv::Mat src, RectDarts &move_darts){
 #endif
         }
     }
-    cv::imshow("二值化后图像",two_value_image);
-#ifdef show_move
 
+#ifdef show_move
+    cv::imshow("二值化后图像",two_value_image);
     cv::imshow("相机原图",src_copy);
 #endif
 
@@ -379,16 +379,16 @@ bool DartsDetect::findDarts(cv::Mat src,darts &move_darts,int color_type)
                 min_ellipse = fitEllipse(contours[i]);                  //椭圆拟合
                 //长和宽的比值进项限制
                 double ellipse_h_w_div=lengthDivWidth(min_ellipse);
-                if(ellipse_h_w_div > 4 ||
-                   ellipse_h_w_div < 0.5){
+                if(ellipse_h_w_div > radar::blob_heigth_div_width_max ||
+                   ellipse_h_w_div < radar::blob_heigth_div_width_min){
 #ifdef show_blob
                     std::cout << "筛选灯条：changkuan:" << ellipse_h_w_div << std::endl;
 #endif
                     continue;
                 }
                 //!面积筛选
-                if (6 > contourArea(contours[i]) ||
-                    contourArea(contours[i]) > 900 ){
+                if (radar::blob_area_min > contourArea(contours[i]) ||
+                    contourArea(contours[i]) > radar::blob_area_max ){
 #ifdef show_blob
                     std::cout << "筛选灯条：mianji"<< contourArea(contours[i]) << std::endl;
 #endif
@@ -482,7 +482,7 @@ cv::Point2f DartsDetect::findOneDetect(cv::Mat src,std::string camera,float &S)
         {
             number=0;
             cv::rectangle(src,darts_[0],cv::Scalar(0, 0, 255), 2, 8, 0);//绘制矩形框
-            imshow("srcc"+camera,src);
+//            imshow("srcc"+camera,src);
 //                cv::putText(src3, std::to_string(color_type),cv::Point(15,15),cv::FONT_HERSHEY_PLAIN,2,cv::Scalar(0, 255, 255), 2, 8, 0);
 //                imshow("src3"+camera,src3);
 

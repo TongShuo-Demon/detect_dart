@@ -1,43 +1,42 @@
 %YAML:1.0
 ---
 
-
+#敌方颜色
 enemy_color:   0
 
 #飞镖范围
-vehicle_min_area: 100
-vehicle_max_area: 1500
+dart_min_area: 100
+dart_max_area: 1500
 
-#c长与宽比值筛选
-vehicle_heigth_div_width_min: 0.3
-vehicle_heigth_div_width_max: 4
+#轮廓面积与方框比值
+dart_area_ratio: 0.1
 
-#像素比约束值
-pixel_percent_limit: 0.01
+#长与宽比值筛选
+dart_heigth_div_width_min: 0.3
+dart_heigth_div_width_max: 4
 
-#中心区域长宽比限制
-center_rect_div_limit: 0.75
-
-#装甲板区域长宽比限制
-armor_rect_div_limit: 0.4
+#飞镖的长和宽
+dart_heigth_min: 8
+dart_heigth_max: 200
 
 
-#中心点距离图像边界限制 190 *0.75
-roi_size: 190
+#*********************************对于运动roi的内部筛选******************************************
+#飞镖的长和宽比
+blob_heigth_div_width_min: 0.5
+blob_heigth_div_width_max: 4
 
-#中心圆与装甲板中心距离限制 170  200 *0.75
-distance_lower:  100
-distance_upper:  200
+#面积范围
+blob_area_min: 6
+blob_area_max: 900
 
-#预测增加角度
-predict_angle: 20
+#*********************************apriltag标签******************************************
 
-#预测重力补偿
-predict_gravity_x: -17
-predict_gravity_y: -45
+apriltag_family: tag36h11
 
-#判断顺逆时针间隔帧数
-clock_wise_frame: 20
+tag_size: 0.365    #标签的尺寸
+
+
+
 
 #SVM路径
 svm_model_path: ../cfg/cubot_svm_4_30_dafu.xml
