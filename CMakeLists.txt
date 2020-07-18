@@ -52,7 +52,7 @@ add_subdirectory(camera/src)
 add_executable(Radar main.cpp camera/src/shm.cpp my_radar/src/radar_main.cpp my_radar/inc/radar_main.hpp
         my_radar/src/double_measurement.cpp my_radar/inc/double_measurement.h my_radar/src/find_darts.cpp
         my_radar/inc/find_darts.h my_radar/src/others.cpp my_radar/inc/others.h my_radar/inc/switch_function.h
-        my_radar/src/apriltag_pose.cpp my_radar/inc/apriltag_pose.h my_radar/src/kalman_forecast.cpp my_radar/inc/kalman_forecast.h)
+        my_radar/src/apriltag_pose.cpp my_radar/inc/apriltag_pose.h my_radar/src/kalman_forecast.cpp my_radar/inc/kalman_forecast.h my_radar/src/serial_port.cpp my_radar/inc/serial_port.h)
 
 target_link_libraries(Radar ${OpenCV_LIBS} ${Eigen3_LIBRARIES} ${Boost_LIBRARY} ${LINK_DIR}
         boost_thread boost_system rt -lpthread timer imgSubscrible -lboost_date_time

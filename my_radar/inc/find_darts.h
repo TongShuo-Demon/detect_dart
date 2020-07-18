@@ -37,16 +37,19 @@ class DartsDetect{
 
 public:
 
+    float K_pixel_physics;                                         //速度使用
+
     bool findDarts(cv::Mat src,darts &move_darts,int color_type); //寻找飞镖
     bool extractionDart(const cv::Mat src, RectDarts &move_darts); //提取运动物体
-    cv::Point2f findOneDetect(cv::Mat src,std::string,float &S );     //最后检测
+    cv::Point2f findOneDetect(cv::Mat src,std::string camera,float &S );     //最后检测
 
-    bool matchDoubleDarts(cv::Mat src_left,cv::Mat src_right,cv::Point2f &uv_left,cv::Point2f &uv_right,float &K);     //最后检测
+    bool matchDoubleDarts(cv::Mat src_left,cv::Mat src_right,cv::Point2f &uv_left,cv::Point2f &uv_right);     //最后检测
 
-
+    cv::Mat frameDifferenceMethod(const cv::Mat src);
 private:
     cv::Mat imagePreProcess(cv::Mat &src,uint8_t enemy_color);
     cv::Mat processVideoKNN(const cv::Mat &src);
+
 
 };
 

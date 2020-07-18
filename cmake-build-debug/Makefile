@@ -352,6 +352,33 @@ my_radar/src/radar_main.cpp.s:
 	$(MAKE) -f CMakeFiles/Radar.dir/build.make CMakeFiles/Radar.dir/my_radar/src/radar_main.cpp.s
 .PHONY : my_radar/src/radar_main.cpp.s
 
+my_radar/src/serial_port.o: my_radar/src/serial_port.cpp.o
+
+.PHONY : my_radar/src/serial_port.o
+
+# target to build an object file
+my_radar/src/serial_port.cpp.o:
+	$(MAKE) -f CMakeFiles/Radar.dir/build.make CMakeFiles/Radar.dir/my_radar/src/serial_port.cpp.o
+.PHONY : my_radar/src/serial_port.cpp.o
+
+my_radar/src/serial_port.i: my_radar/src/serial_port.cpp.i
+
+.PHONY : my_radar/src/serial_port.i
+
+# target to preprocess a source file
+my_radar/src/serial_port.cpp.i:
+	$(MAKE) -f CMakeFiles/Radar.dir/build.make CMakeFiles/Radar.dir/my_radar/src/serial_port.cpp.i
+.PHONY : my_radar/src/serial_port.cpp.i
+
+my_radar/src/serial_port.s: my_radar/src/serial_port.cpp.s
+
+.PHONY : my_radar/src/serial_port.s
+
+# target to generate assembly for a file
+my_radar/src/serial_port.cpp.s:
+	$(MAKE) -f CMakeFiles/Radar.dir/build.make CMakeFiles/Radar.dir/my_radar/src/serial_port.cpp.s
+.PHONY : my_radar/src/serial_port.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -386,6 +413,9 @@ help:
 	@echo "... my_radar/src/radar_main.o"
 	@echo "... my_radar/src/radar_main.i"
 	@echo "... my_radar/src/radar_main.s"
+	@echo "... my_radar/src/serial_port.o"
+	@echo "... my_radar/src/serial_port.i"
+	@echo "... my_radar/src/serial_port.s"
 .PHONY : help
 
 

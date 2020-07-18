@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/demon/CLionProjects/two_camera/cmake-build-debug
 CMakeFiles/Radar.dir/all:
 	$(MAKE) -f CMakeFiles/Radar.dir/build.make CMakeFiles/Radar.dir/depend
 	$(MAKE) -f CMakeFiles/Radar.dir/build.make CMakeFiles/Radar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target Radar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target Radar"
 .PHONY : CMakeFiles/Radar.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/Radar.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Radar.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Radar.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Radar.dir/rule
@@ -126,7 +126,7 @@ camera/src/preinstall:
 camera/src/CMakeFiles/cam_node.dir/all:
 	$(MAKE) -f camera/src/CMakeFiles/cam_node.dir/build.make camera/src/CMakeFiles/cam_node.dir/depend
 	$(MAKE) -f camera/src/CMakeFiles/cam_node.dir/build.make camera/src/CMakeFiles/cam_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles --progress-num=10,11,12,13,14,15 "Built target cam_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15,16 "Built target cam_node"
 .PHONY : camera/src/CMakeFiles/cam_node.dir/all
 
 # Include target in all.

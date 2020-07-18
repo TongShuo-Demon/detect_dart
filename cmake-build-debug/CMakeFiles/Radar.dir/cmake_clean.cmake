@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Radar.dir/my_radar/src/others.cpp.o"
   "CMakeFiles/Radar.dir/my_radar/src/apriltag_pose.cpp.o"
   "CMakeFiles/Radar.dir/my_radar/src/kalman_forecast.cpp.o"
+  "CMakeFiles/Radar.dir/my_radar/src/serial_port.cpp.o"
   "../bin/Radar.pdb"
   "../bin/Radar"
 )

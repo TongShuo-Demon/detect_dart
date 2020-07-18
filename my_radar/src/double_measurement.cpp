@@ -123,7 +123,7 @@ Point3f DoubleMeasurement::pixelToWorldCoordinate(Point2f pixeLeft,Point2f pixel
 
 
 
-
+//*********************************************以下代码已经废弃*************************************
 /*
  * 世界坐标系到图像坐标系
  *

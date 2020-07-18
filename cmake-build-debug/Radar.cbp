@@ -191,6 +191,9 @@
 		<Unit filename="/home/demon/CLionProjects/two_camera/my_radar/inc/radar_main.hpp">
 			<Option target="Radar"/>
 		</Unit>
+		<Unit filename="/home/demon/CLionProjects/two_camera/my_radar/inc/serial_port.h">
+			<Option target="Radar"/>
+		</Unit>
 		<Unit filename="/home/demon/CLionProjects/two_camera/my_radar/inc/switch_function.h">
 			<Option target="Radar"/>
 		</Unit>
@@ -210,6 +213,9 @@
 			<Option target="Radar"/>
 		</Unit>
 		<Unit filename="/home/demon/CLionProjects/two_camera/my_radar/src/radar_main.cpp">
+			<Option target="Radar"/>
+		</Unit>
+		<Unit filename="/home/demon/CLionProjects/two_camera/my_radar/src/serial_port.cpp">
 			<Option target="Radar"/>
 		</Unit>
 		<Unit filename="/home/demon/CLionProjects/two_camera/CMakeLists.txt">

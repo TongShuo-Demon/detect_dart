@@ -3,6 +3,12 @@
 //
 #include"find_darts.h"
 
+
+void jiasu_left(cv::Mat img_src_left,cv::Point2f result_sp_left,cv::Mat &src_roi_left,cv::Point2f out_point_left);
+
+
+void jiasu_right(cv::Mat img_src_right,cv::Point2f result_sp_right,cv::Mat &src_roi_right,cv::Point2f out_point_right);
+
 // 腐蚀膨胀二值化
 cv::Mat DartsDetect::imagePreProcess(cv::Mat &src,uint8_t enemy_color) {
 
@@ -194,6 +200,49 @@ cv::Mat DartsDetect::processVideoKNN(const cv::Mat &src){
 }
 
 
+cv::Mat DartsDetect::frameDifferenceMethod(const cv::Mat src){
+
+    cv::Mat src_gray,gray_diff,diff_src; //通过knn方法得到的掩码图像fgmask
+
+    static  int framenum = 0;
+    static  cv::Mat pre_src;
+
+    framenum++;
+    if(framenum >5000)
+    {
+        framenum=2;
+    }
+
+    if(framenum==1) {
+        GaussianBlur(src, src, cv::Size(3, 3), 60);
+        cvtColor(src, src_gray, cv::COLOR_BGR2GRAY);
+
+    } else if(framenum >1) {
+
+        GaussianBlur(src, src, cv::Size(3, 3), 60);
+        cvtColor(src, src_gray, cv::COLOR_BGR2GRAY);
+
+        subtract(pre_src, src_gray, gray_diff);    //求差
+
+        cv::Mat element = getStructuringElement(0, cv::Size(3, 3)); //膨胀核
+
+        GaussianBlur(gray_diff, gray_diff, cv::Size(3, 3), 0, 0);
+
+        dilate(gray_diff, diff_src, element); //膨胀
+
+        for (int i = 0; i < diff_src.rows; i++)
+            for (int j = 0; j < diff_src.cols; j++)
+                if (abs(diff_src.at<unsigned char>(i, j)) >= 18)//这里模板参数一定要用unsigned char，否则就一直报错
+                    diff_src.at<unsigned char>(i, j) = 255;
+                else diff_src.at<unsigned char>(i, j) = 0;
+        cv::imshow("www",diff_src);
+
+    }
+
+    pre_src = src_gray;
+
+return diff_src;
+}
 
 //输入的是
 //得到所有疑似车辆
@@ -471,6 +520,7 @@ cv::Point2f DartsDetect::findOneDetect(cv::Mat src,std::string camera,float &S)
                 continue;
             }
             int judge_number_darts =findDarts(src3,move_darts,color_type);
+
 //            cv::rectangle(point_src,darts_[i],cv::Scalar(0, 255, 0), 2, 8, 0);//绘制矩形框
 //            cv::imshow("dddd",point_src);
 
@@ -482,9 +532,8 @@ cv::Point2f DartsDetect::findOneDetect(cv::Mat src,std::string camera,float &S)
         {
             number=0;
             cv::rectangle(src,darts_[0],cv::Scalar(0, 0, 255), 2, 8, 0);//绘制矩形框
-//            imshow("srcc"+camera,src);
-//                cv::putText(src3, std::to_string(color_type),cv::Point(15,15),cv::FONT_HERSHEY_PLAIN,2,cv::Scalar(0, 255, 255), 2, 8, 0);
-//                imshow("src3"+camera,src3);
+            imshow("srcc"+camera,src);
+
 
             cv::Point2f Pixel;
             Pixel.x=darts_[0].tl().x+move_darts[0].dart_center.x;
@@ -494,6 +543,8 @@ cv::Point2f DartsDetect::findOneDetect(cv::Mat src,std::string camera,float &S)
             S = length/0.12;
 
 //            std::cout << "检测到飞镖头"<< Pixel <<std::endl;
+
+
             return Pixel;
         }
 
@@ -504,14 +555,16 @@ cv::Point2f DartsDetect::findOneDetect(cv::Mat src,std::string camera,float &S)
 
 }
 
-bool DartsDetect::matchDoubleDarts(cv::Mat src_left,cv::Mat src_right, cv::Point2f &uv_left,cv::Point2f &uv_right,float &K)
+bool DartsDetect::matchDoubleDarts(cv::Mat src_left,cv::Mat src_right, cv::Point2f &uv_left,cv::Point2f &uv_right)
 {
 
-//    cv::Point2f uv_left,uv_right;
+
     float left_a,right_b;
 
 
     uv_left=findOneDetect(src_left,"left",left_a);
+
+
     if(uv_left.x==0 && uv_left.y==0){
 //            std::cout << "左图未检测到" << std::endl;
         return 0;
@@ -535,8 +588,163 @@ bool DartsDetect::matchDoubleDarts(cv::Mat src_left,cv::Mat src_right, cv::Point
         return 0;
     }
 
-    K=(left_a+right_b)/2;
+
+    K_pixel_physics=(left_a+right_b)/2;
     return 1;
+}
+
+
+
+
+void jiasu_left(cv::Mat img_src_left,cv::Point2f result_sp_left,cv::Mat &src_roi,cv::Point2f out_point_left)
+{
+
+
+    cv::Mat img_input_src;
+    cv::Mat img_input_backup;
+    static cv::Rect rect_roi_left = cv::Rect(-1, -1, 0, 0);    // 区域加速使用的roi
+
+
+    //将roi坐标系下的目标点坐标转换为原图坐标系下的坐标
+    result_sp_left.x = result_sp_left.x + rect_roi_left.x;
+    result_sp_left.y = result_sp_left.y + rect_roi_left.y;
+
+
+    img_input_src = img_src_left(rect_roi_left).clone();
+    img_input_backup = img_src_left(rect_roi_left).clone();
+
+
+    //九个区域中心点坐标
+    cv::Point2f bar_list_level_2_roi_boundary_points[8];
+    bar_list_level_2_roi_boundary_points[0] = cv::Point2f(480, 384);
+    bar_list_level_2_roi_boundary_points[1] = cv::Point2f(640, 384);
+    bar_list_level_2_roi_boundary_points[2] = cv::Point2f(800, 384);
+    bar_list_level_2_roi_boundary_points[3] = cv::Point2f(800, 512);
+    bar_list_level_2_roi_boundary_points[4] = cv::Point2f(800, 640);
+    bar_list_level_2_roi_boundary_points[5] = cv::Point2f(640, 640);
+    bar_list_level_2_roi_boundary_points[6] = cv::Point2f(480, 640);
+    bar_list_level_2_roi_boundary_points[7] = cv::Point2f(480, 512);
+
+    //九个区域roi
+    cv::Rect rect_bar_list_level_2_boundary_1(0, 0, 480, 384);
+    cv::Rect rect_bar_list_level_2_boundary_2(480, 0, 320, 384);
+    cv::Rect rect_bar_list_level_2_boundary_3(800, 0, 480, 384);
+    cv::Rect rect_bar_list_level_2_boundary_4(0, 384, 480, 256);
+    cv::Rect rect_bar_list_level_2_boundary_5(480, 384, 320, 256);
+    cv::Rect rect_bar_list_level_2_boundary_6(800, 384, 480, 256);
+    cv::Rect rect_bar_list_level_2_boundary_7(0, 640, 480, 384);
+    cv::Rect rect_bar_list_level_2_boundary_8(480, 640, 320, 384);
+    cv::Rect rect_bar_list_level_2_boundary_9(800, 640, 480, 384);
+
+    //根据当前帧目标殿坐标找到对应区域
+    if (rect_bar_list_level_2_boundary_5.contains(result_sp_left))
+        rect_roi_left = cv::Rect((int)result_sp_left.x - 480, (int)result_sp_left.y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_2.contains(result_sp_left))
+        rect_roi_left = cv::Rect((int)bar_list_level_2_roi_boundary_points[1].x - 480, (int)bar_list_level_2_roi_boundary_points[1].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_4.contains(result_sp_left))
+        rect_roi_left = cv::Rect((int)bar_list_level_2_roi_boundary_points[7].x - 480, (int)bar_list_level_2_roi_boundary_points[7].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_6.contains(result_sp_left))
+        rect_roi_left = cv::Rect((int)bar_list_level_2_roi_boundary_points[3].x - 480, (int)bar_list_level_2_roi_boundary_points[3].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_8.contains(result_sp_left))
+        rect_roi_left = cv::Rect((int)bar_list_level_2_roi_boundary_points[5].x - 480, (int)bar_list_level_2_roi_boundary_points[5].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_1.contains(result_sp_left))
+        rect_roi_left = cv::Rect((int)bar_list_level_2_roi_boundary_points[0].x - 480, (int)bar_list_level_2_roi_boundary_points[0].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_3.contains(result_sp_left))
+        rect_roi_left = cv::Rect((int)bar_list_level_2_roi_boundary_points[2].x - 480, (int)bar_list_level_2_roi_boundary_points[2].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_7.contains(result_sp_left))
+        rect_roi_left = cv::Rect((int)bar_list_level_2_roi_boundary_points[6].x - 480, (int)bar_list_level_2_roi_boundary_points[6].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_9.contains(result_sp_left))
+        rect_roi_left = cv::Rect((int)bar_list_level_2_roi_boundary_points[4].x - 480, (int)bar_list_level_2_roi_boundary_points[4].y - 384, 960, 768);
+
+
+    src_roi = img_src_left(rect_roi_left);
+
+
+
+}
+
+void jiasu_right(cv::Mat img_src_right,cv::Point2f result_sp_right,cv::Mat &src_roi_right,cv::Point2f out_point_right)
+{
+
+
+    cv::Mat img_input_src;
+    cv::Mat img_input_backup;
+    static cv::Rect rect_roi_right = cv::Rect(-1, -1, 0, 0);    // 区域加速使用的roi
+
+
+    //将roi坐标系下的目标点坐标转换为原图坐标系下的坐标
+    result_sp_right.x = result_sp_right.x + rect_roi_right.x;
+    result_sp_right.y = result_sp_right.y + rect_roi_right.y;
+
+
+    img_input_src = img_src_right(rect_roi_right).clone();
+    img_input_backup = img_src_right(rect_roi_right).clone();
+
+
+    //九个区域中心点坐标
+    cv::Point2f bar_list_level_2_roi_boundary_points[8];
+    bar_list_level_2_roi_boundary_points[0] = cv::Point2f(480, 384);
+    bar_list_level_2_roi_boundary_points[1] = cv::Point2f(640, 384);
+    bar_list_level_2_roi_boundary_points[2] = cv::Point2f(800, 384);
+    bar_list_level_2_roi_boundary_points[3] = cv::Point2f(800, 512);
+    bar_list_level_2_roi_boundary_points[4] = cv::Point2f(800, 640);
+    bar_list_level_2_roi_boundary_points[5] = cv::Point2f(640, 640);
+    bar_list_level_2_roi_boundary_points[6] = cv::Point2f(480, 640);
+    bar_list_level_2_roi_boundary_points[7] = cv::Point2f(480, 512);
+
+    //九个区域roi
+    cv::Rect rect_bar_list_level_2_boundary_1(0, 0, 480, 384);
+    cv::Rect rect_bar_list_level_2_boundary_2(480, 0, 320, 384);
+    cv::Rect rect_bar_list_level_2_boundary_3(800, 0, 480, 384);
+    cv::Rect rect_bar_list_level_2_boundary_4(0, 384, 480, 256);
+    cv::Rect rect_bar_list_level_2_boundary_5(480, 384, 320, 256);
+    cv::Rect rect_bar_list_level_2_boundary_6(800, 384, 480, 256);
+    cv::Rect rect_bar_list_level_2_boundary_7(0, 640, 480, 384);
+    cv::Rect rect_bar_list_level_2_boundary_8(480, 640, 320, 384);
+    cv::Rect rect_bar_list_level_2_boundary_9(800, 640, 480, 384);
+
+    //根据当前帧目标殿坐标找到对应区域
+    if (rect_bar_list_level_2_boundary_5.contains(result_sp_right))
+        rect_roi_right = cv::Rect((int)result_sp_right.x - 480, (int)result_sp_right.y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_2.contains(result_sp_right))
+        rect_roi_right = cv::Rect((int)bar_list_level_2_roi_boundary_points[1].x - 480, (int)bar_list_level_2_roi_boundary_points[1].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_4.contains(result_sp_right))
+        rect_roi_right = cv::Rect((int)bar_list_level_2_roi_boundary_points[7].x - 480, (int)bar_list_level_2_roi_boundary_points[7].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_6.contains(result_sp_right))
+        rect_roi_right = cv::Rect((int)bar_list_level_2_roi_boundary_points[3].x - 480, (int)bar_list_level_2_roi_boundary_points[3].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_8.contains(result_sp_right))
+        rect_roi_right = cv::Rect((int)bar_list_level_2_roi_boundary_points[5].x - 480, (int)bar_list_level_2_roi_boundary_points[5].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_1.contains(result_sp_right))
+        rect_roi_right = cv::Rect((int)bar_list_level_2_roi_boundary_points[0].x - 480, (int)bar_list_level_2_roi_boundary_points[0].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_3.contains(result_sp_right))
+        rect_roi_right = cv::Rect((int)bar_list_level_2_roi_boundary_points[2].x - 480, (int)bar_list_level_2_roi_boundary_points[2].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_7.contains(result_sp_right))
+        rect_roi_right = cv::Rect((int)bar_list_level_2_roi_boundary_points[6].x - 480, (int)bar_list_level_2_roi_boundary_points[6].y - 384, 960, 768);
+
+    else if (rect_bar_list_level_2_boundary_9.contains(result_sp_right))
+        rect_roi_right = cv::Rect((int)bar_list_level_2_roi_boundary_points[4].x - 480, (int)bar_list_level_2_roi_boundary_points[4].y - 384, 960, 768);
+
+
+
+    src_roi_right = img_src_right(rect_roi_right);
+
+
+
 }
 
 
@@ -547,8 +755,14 @@ bool DartsDetect::matchDoubleDarts(cv::Mat src_left,cv::Mat src_right, cv::Point
 
 
 
+
+
+
+
+
+
 //
-//以下部分是为了应对没有实际飞镖飞行的视频的情况下，验证双目的坐标准不准问题的
+//以下部分是为了应对没有实际飞镖飞行的视频的情况下，验证双目的坐标准不准问题的,现在已经废弃
 //
 
 cv::Mat imagePreProcessTest(cv::Mat &src,uint8_t enemy_color) {

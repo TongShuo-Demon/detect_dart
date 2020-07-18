@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/demon/CLionProjects/two_camera/my_radar/src/kalman_forecast.cpp" "/home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles/Radar.dir/my_radar/src/kalman_forecast.cpp.o"
   "/home/demon/CLionProjects/two_camera/my_radar/src/others.cpp" "/home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles/Radar.dir/my_radar/src/others.cpp.o"
   "/home/demon/CLionProjects/two_camera/my_radar/src/radar_main.cpp" "/home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles/Radar.dir/my_radar/src/radar_main.cpp.o"
+  "/home/demon/CLionProjects/two_camera/my_radar/src/serial_port.cpp" "/home/demon/CLionProjects/two_camera/cmake-build-debug/CMakeFiles/Radar.dir/my_radar/src/serial_port.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
